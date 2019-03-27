@@ -1,0 +1,108 @@
+<include file="Share/header" />
+
+<link rel="stylesheet" href="__PUBLIC__/home/assets/css/other.min.css" />
+
+<!--===========layout-container================-->
+<div class="register-container" style="overflow: hidden;">
+	<div class="register-box ">
+		<form action="" class="am-form" data-am-validator>
+			<fieldset>
+				<legend>注册用户
+					<p class="register-info">账号可以使用手机或者邮箱注册，但是仔细核对后，填入正确信息。</p>
+				</legend>
+	
+				<div class="am-form-group">
+					<div class="am-g">
+						<div class="am-u-md-2 am-padding-0 am-text-right">
+							<label for="username" class="register-name">账号</label>
+						</div>
+						<div class="am-u-md-10">
+							<input type="text" id="username" minlength="0" placeholder="输入用户名（至少 3 个字符）" required/>
+						</div>
+					</div>
+				</div>
+	
+				<div class="am-form-group">
+					<div class="am-g">
+						<div class="am-u-md-2 am-padding-0 am-text-right">
+							<label for="password" class="register-pwd">密码</label>
+						</div>
+						<div class="am-u-md-10">
+							<input type="password" id="password" placeholder="输入密码" />
+						</div>
+					</div>
+				</div>
+	
+				<div class="am-form-group">
+					<div class="am-g">
+						<div class="am-u-md-2 am-padding-0 am-text-right">
+							<label for="password-comfirm">确认密码</label>
+						</div>
+						<div class="am-u-md-10">
+							<input type="password" id="password-comfirm" placeholder="请与上面输入的值一致" data-equal-to="#password" required/>
+						</div>
+					</div>
+				</div>
+	
+				<div class="am-g">
+					<div class="am-u-md-10"> 
+						<button class="am-btn am-btn-secondary j-register" type="button">注册</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+
+	<script type="text/javascript">
+          // 提交
+            $('.j-register').on('click',function(){
+
+                if(!$('#username').val()) { alert('请输入帐号！'); return}
+
+                if(!$('#password').val()) { alert('请输入密码！'); return}
+
+                if(!$('#password-comfirm').val()) { alert('请确定密码！'); return}
+
+                if($('#password').val() != $('#password-comfirm').val()) { alert('两次密码不一致'); return}
+
+                var param = {
+
+                     username : $('#username').val(),
+
+                     password : $('#password').val()
+
+                }
+
+                $.ajax({
+
+                    url: "register",
+
+                    data: param,
+
+                    type:'post',
+
+                    success:function(res) {
+
+                        if(res.status == 1){
+
+                        	alert('注册成功！')
+
+                            window.location.href = '/Home//Login/index';
+
+                        } else {
+
+                            alert(res.data)
+
+                        }
+
+                    }
+
+                });
+
+            })
+
+    </script>
+
+<include file="Share/footer" />

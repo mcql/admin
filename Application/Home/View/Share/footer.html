@@ -1,0 +1,140 @@
+  <footer class="footer">
+    <div class="footer_part1">
+      <ul>
+        <li>产品中心</li>
+        <li>电动打标机</li>
+        <li>气动打标机</li>
+        <li>激光打标机</li>
+        <li>电化学打标机</li>
+        <li>手动打标机</li>
+        <li>凸字打码机</li>
+      </ul>
+      <ul>
+        <li>关于博翰</li>
+        <li>公司简介</li>
+        <li>企业文化</li>
+        <li>技术实力</li>
+        <li>企业荣誉</li>
+        <li>典型客户</li>
+        <li>公司团队</li>
+      </ul>
+      <ul>
+        <li>新闻资讯</li>
+        <li>行业资讯</li>
+        <li>技术支持</li>
+        <li>解决方案</li>
+        <li>公司新闻</li>
+        <li>视频专区</li>
+        <li>服务政策</li>
+      </ul>
+      <ul>
+        <li>网站地图</li>
+        <li>网站地图</li>
+        <li>XML地图</li>
+      </ul>
+      <ul>
+        <li>联系我们</li>
+        <li>技术支持：15000968280张工</li>
+        <li>电话：0510-83883937</li>
+        <li>销售：15861465694 皋红霞</li>
+        <li>传真：0510-84602486</li>
+        <li>邮箱：623005190@qq.com</li>
+        <li>地址：江苏省无锡市惠山区玉祁镇堰玉路176号</li>
+      </ul>
+    </div>
+    <div class="footer_part2">
+      <ul>
+        <li>打标机附件定制</li>
+        <li>非标流水定制</li>
+        <li>打标机加工维修</li>
+        <li>预约参观</li>
+        <li>在线留言</li>
+      </ul>
+      <div>
+        <img src="__PUBLIC__/home/assets/images/logo.png" />
+        <img src="__PUBLIC__/home/assets/images/logo.png" />
+        <img src="__PUBLIC__/home/assets/images/logo.png" />
+      </div>
+    </div>
+    <div class="footer_part3">
+      <p>气动打标机 电动打标机 激光打标机 电化学打标机</p>
+      <p>无锡博翰自动化设备有限公司： 0510-83883937/15861465694（微信同号）QQ：345848834</p>
+      <p>友情链接</p>
+    </div>
+  </footer>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/Swiper/4.4.6/js/swiper.min.js"></script>
+  <script type="text/javascript">
+    var mySwiper = new Swiper('.swiper-container', {
+
+      autoplay: true, //可选选项，自动滑动
+
+      speed: 1000,
+
+      loop: true,
+
+      effect: 'fade',
+
+      navigation: {
+
+        nextEl: '.swiper-button-next',
+
+        prevEl: '.swiper-button-prev',
+
+      },
+
+    })
+
+    $(function () {
+
+      $("nav li").hover(function () {
+
+        $(this).addClass("nav_hover")
+
+        $(this).find("a").addClass("bluecolor")
+
+        var n = $("nav li").index(this)
+
+        if (n > 0) {
+
+          $(".nav_detail>div").eq(n - 1).removeClass("hide")
+
+        }
+
+      }, function () {
+
+        $(this).removeClass("nav_hover")
+
+        $(this).find("a").removeClass("bluecolor")
+
+        $(".nav_detail>div").addClass("hide")
+
+      })
+
+
+
+      $(".nav_detail>div").hover(function () {
+
+        $(this).removeClass("hide")
+
+        var m = $(".nav_detail>div").index(this)
+
+        $("nav li").eq(m + 1).addClass("nav_hover")
+
+        $("nav li").eq(m + 1).find("a").addClass("bluecolor")
+
+      }, function () {
+
+        $(".nav_detail>div").addClass("hide")
+
+        $("nav li").removeClass("nav_hover")
+
+        $("nav li").find("a").removeClass("bluecolor")
+
+      })
+
+    })
+  </script>
+  </body>
+
+  </html>

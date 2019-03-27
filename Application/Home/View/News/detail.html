@@ -1,0 +1,71 @@
+<include file="Share/header" />
+
+<link rel="stylesheet" href="__PUBLIC__/home/assets/css/news.min.css" />
+
+<!--===========layout-container================-->
+<div class="layout-container">
+	<div class="page-header">
+		<div class="am-container">
+			<h1 class="page-header-title">新闻中心</h1>
+		</div>
+	</div>
+
+	<div class="breadcrumb-box">
+		<div class="am-container">
+			<ol class="am-breadcrumb">
+				<li>
+					<a href="/">首页</a>
+				</li>
+				<li class="am-active">新闻中心</li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+<div class="section news-section">
+	<div class="container">
+		<!--news-section left start-->
+		<div class="am-u-md-9">
+			<div class="article">
+				<header class="article--header">
+					<h2 class="article--title">
+						<a href="#" rel="">{$data.title}</a>
+					</h2>
+					<ul class="article--meta">
+						<li class="article--meta_item">
+							<i class="am-icon-calendar"></i>{$data.create_time}</li>
+						<li class="article--meta_item"><i class="am-icon-user"></i>Admin</li>
+						<!-- <li class="article--meta_item"><i class="am-icon-commenting-o"></i>33评论</li> -->
+					</ul>
+				</header>
+				<div class="article--content">
+					<p>
+						{$data.content|stripslashes|htmlspecialchars_decode}
+					</p>
+				</div>
+			</div>
+
+		</div>
+		<!--news-section left end-->
+
+		<!--news-section right start-->
+		<div class="am-u-md-3">
+			<div class="blog_sidebar">
+				<div class="widget">
+					<h2 class="widget--title">
+						<i class="am-icon-file-text-o"></i>最新新闻</h2>
+					<ul>
+						<volist name="new_list" id="vo">
+							<li>
+								<a href="/Home/News/detail/id/{$vo.id}">{$vo.title}</a>
+							</li>
+						</volist>
+					</ul>
+				</div>
+
+			</div>
+			<!--news-section right end-->
+		</div>
+	</div>
+
+<include file="Share/footer" />

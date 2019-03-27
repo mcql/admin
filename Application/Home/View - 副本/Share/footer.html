@@ -1,0 +1,80 @@
+<!--===========layout-footer================-->
+<div class="layout-footer">
+  <div class="footer">
+    <div style="background-color:#383d61" class="footer--bg"></div>
+    <div class="footer--inner">
+      <div class="container">
+        <div class="footer_main">
+          <div class="am-g">
+            <div class="am-u-md-3 ">
+              <div class="footer_main--column">
+                <strong class="footer_main--column_title">关于我们</strong>
+                <div class="footer_about">
+                  <p class="footer_about--text">
+                    {$footer_about|mb_substr=0,120,'utf-8'}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="am-u-md-3 ">
+              <div class="footer_main--column">
+                <strong class="footer_main--column_title">新闻中心</strong>
+                <ul class="footer_navigation">
+                  <volist name="footer_new_list" id="vo">
+                    <li class="footer_navigation--item">
+                      <a href="/Home/News/detail/id/{$vo.id}" class="footer_navigation--link">{$vo.title|mb_substr=0,10,'utf-8'}</a>
+                    </li>
+                  </volist> 
+                </ul>
+              </div>
+            </div>
+
+            <div class="am-u-md-3 ">
+              <div class="footer_main--column">
+                <strong class="footer_main--column_title">成功案例</strong>
+                <ul class="footer_navigation">
+                  <volist name="footer_case_list" id="vo">
+                    <li class="footer_navigation--item">
+                      <a href="/Home/Cases/index" class="footer_navigation--link">{$vo.title|mb_substr=0,10,'utf-8'}</a>
+                    </li>
+                  </volist> 
+                </ul>
+              </div>
+            </div>
+
+            <div class="am-u-md-3 ">
+              <div class="footer_main--column">
+                <strong class="footer_main--column_title">联系详情</strong>
+                <ul class="footer_contact_info">
+                  <li class="footer_contact_info--item">
+                    <i class="am-icon-phone"></i>
+                    <span>服务专线：400 069 0309</span>
+                  </li>
+                  <li class="footer_contact_info--item">
+                    <i class="am-icon-envelope-o"></i>
+                    <span>yunshipei.com</span>
+                  </li>
+                  <li class="footer_contact_info--item">
+                    <i class="am-icon-map-marker"></i>
+                    <span>北京市海淀区海淀大街27号天使大厦（原亿景大厦）三层</span>
+                  </li>
+                  <li class="footer_contact_info--item">
+                    <i class="am-icon-clock-o"></i>
+                    <span>Monday - Friday, 9am - 6 pm; </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="__PUBLIC__/home/assets/js/amazeui.js" charset="utf-8"></script>
+<script src="__PUBLIC__/home/assets/js/common.js" charset="utf-8"></script>
+{$system.footer_js|htmlspecialchars_decode}
+</body>
+
+</html>

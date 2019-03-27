@@ -1,0 +1,37 @@
+<include file="Share/header" />
+
+<link rel="stylesheet" href="__PUBLIC__/home/assets/css/about.min.css" />
+
+<!--===========layout-container================-->
+<div class="layout-container">
+	<div class="page-header">
+		<div class="am-container">
+			<h1 class="page-header-title">关于我们</h1>
+		</div>
+	</div>
+
+	<div class="breadcrumb-box">
+		<div class="am-container">
+			<ol class="am-breadcrumb">
+				<li>
+					<a href="/">首页</a>
+				</li>
+				<li class="am-active">关于我们</li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container">
+		<div class="section--header">
+			<!-- <h2 class="section--title">云适配</h2> -->
+			<p class="section--description" style="font-size:16px; text-align: left; line-height: 40px;text-indent: 24px;">
+				{$about_content|stripslashes|htmlspecialchars_decode}
+			</p>
+		</div>
+
+	</div>
+</div>
+
+<include file="Share/footer" />
